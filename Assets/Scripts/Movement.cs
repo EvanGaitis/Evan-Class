@@ -7,6 +7,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     CharacterController characterController;
+    PlayerInteraction playerInteraction;
 
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -17,6 +18,8 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+
+        playerInteraction = GetComponentInChildren<PlayerInteraction>();
     }
 
     void Update()
@@ -32,6 +35,8 @@ public class Movement : MonoBehaviour
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
+            Interact();
+
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;
@@ -39,5 +44,13 @@ public class Movement : MonoBehaviour
         }
        // moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+    public void Interact()
+    {
+        //fire1 means that when the player clicks there will be an interaction if the land is harvestable
+        if (Input.GetButtonDown("Fire1"))
+        {
+            playerInteraction.Interact();
+        }
     }
 }

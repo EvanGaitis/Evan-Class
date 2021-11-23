@@ -52,4 +52,11 @@ public class Land : MonoBehaviour
     {
         select.SetActive(toggle);
     }
+
+
+    //It the computer kmows if the player is standing in a harvestable land
+    public void Interact()
+    {
+        SwitchLandStatus(LandStatus.Farmland);
+    }
 }
