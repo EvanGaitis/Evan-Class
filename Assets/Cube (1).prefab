@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2433057625378319989}
   - component: {fileID: 7392327973113552302}
   - component: {fileID: 6300080836857527882}
+  - component: {fileID: 3758056124055011046}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Land
@@ -96,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b8153cf1085644891b53fee98ba799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 0
+  timer: {fileID: 3758056124055011046}
   landStatus: 0
   soilMat: {fileID: 2100000, guid: 440f8a2a432f2cc46b934edb2de2a6ad, type: 2}
   farmlandMat: {fileID: 2100000, guid: f57c29b86bcb7764d9d6e1b60c64171f, type: 2}
@@ -114,6 +117,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3758056124055011046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082848006456059747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa750de8376bcb4b803e0ecac9feb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  land: {fileID: 7392327973113552302}
+  secondsleft: 0
+  timerPeriod: 20
+  takingAway: 0
 --- !u!1 &1767229762324378554
 GameObject:
   m_ObjectHideFlags: 0

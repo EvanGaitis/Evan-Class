@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Land : MonoBehaviour
 {
-
+    public bool canInteract = true;
+    public Timer timer;
     public enum LandStatus
     {
         Soil, Farmland, Watered
@@ -33,14 +34,17 @@ public class Land : MonoBehaviour
             //When its true the LandStatus changes
             case LandStatus.Soil:
                 materialToSwitch = soilMat;
+  
                 break;
 
             case LandStatus.Farmland:
                 materialToSwitch = farmlandMat;
+              
                 break;
 
             case LandStatus.Watered:
                 materialToSwitch = wateredMat;
+           
                 break;
 
         }
@@ -57,6 +61,30 @@ public class Land : MonoBehaviour
     //It the computer kmows if the player is standing in a harvestable land
     public void Interact()
     {
-        SwitchLandStatus(LandStatus.Farmland);
+        if (canInteract == true )
+        {
+
+            if (landStatus == LandStatus.Soil)
+            {
+                SwitchLandStatus(LandStatus.Farmland);
+                canInteract = false;
+                timer.TimerUp();
+            }
+
+
+            else if (landStatus != LandStatus.Soil && landStatus == LandStatus.Farmland)
+            {
+                SwitchLandStatus(LandStatus.Watered);
+                canInteract = false;
+                timer.TimerUp();
+            }
+        }
+        //else if (canInteract == true && seed2)
+       
+
+        else
+        { }
+
+
     }
 }

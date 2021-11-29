@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     Movement movement;
 
     Land selectedLand = null;
+    public Timer timer;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class PlayerInteraction : MonoBehaviour
         selectedLand = land;
         land.Select(true);
     }
+
     public void Interact()
     {
         if(selectedLand != null)
