@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc22d425348edc4895cc617f1c4ed8f, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
-  description: 
+  description: It can make a land soil
   thumbnail: {fileID: 21300000, guid: 0eadca22fb7bc854995b77ce847debba, type: 3}
   gameModel: {fileID: 0}
   toolType: 0
