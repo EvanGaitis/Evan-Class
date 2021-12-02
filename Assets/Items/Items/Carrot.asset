@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe02921e62de2e4180ea8d7eb14c7ea, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  description: 
+  description: 'Carrot '
   thumbnail: {fileID: 21300000, guid: 567c90c12a0d9e148b8cadb6224fe047, type: 3}
   gameModel: {fileID: 1000013081511698, guid: 20a97bb13c3ef18478cf9c86535b1e9b, type: 3}
   secondsToGrow: 2

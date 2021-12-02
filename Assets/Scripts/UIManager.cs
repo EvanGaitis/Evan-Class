@@ -8,9 +8,13 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
 
     [Header("Inventory System")]
+    public GameObject inventoryPanel;
     public InventorySlot[] toolSlots;
     public InventorySlot[] itemSlots;
-    
+
+    public Text itemNameText;
+    public Text itemDescriptionText;
+
     private void Awake()
     {
         //if there is more than one instance destroy the extra
@@ -48,5 +52,26 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ToggleInventoryPanel()
+    {
+        inventoryPanel.SetActive(!inventoryPanel.activeSelf);
 
+        RenderInventory();
+    }
+
+    //Display item info in the box
+    public void DisplayItemInfo(ItemDate date)
+    {  
+        //if data is null reset
+        if(date == null)
+        {
+            itemNameText.text = "";
+            itemDescriptionText.text = "";
+
+            return;
+        }
+
+        itemNameText.text = date.name;
+        itemDescriptionText.text = date.description;
+    }
 }
